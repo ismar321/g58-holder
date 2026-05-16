@@ -328,7 +328,7 @@ const Index = () => {
         <div className="absolute -bottom-10 left-1/4 w-80 h-80 rounded-full bg-accent/4 blur-3xl" />
         <div className="container relative max-w-6xl px-4">
           <div className="text-center mb-12 sm:mb-14 space-y-5">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-primary/20 shadow-card">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-card-foreground border border-primary/20 shadow-card">
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-black tracking-wide text-foreground">برنامج VMAX</span>
             </div>
@@ -337,17 +337,17 @@ const Index = () => {
               <br className="hidden sm:block" /> ببرنامج <span className="text-gradient">VMAX</span>
             </h2>
             <p className="text-foreground/70 text-base sm:text-lg max-w-3xl mx-auto leading-loose">
-              برنامج <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-foreground">VMAX</span>
+              برنامج <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-card-foreground">VMAX</span>
               خفيف وغير متطلب على الجهاز، يخليك تبدّل
               <span className="px-2 py-0.5 mx-1 rounded-md bg-primary/8 border border-primary/30 font-semibold text-primary">الثيمات</span>
               ، تحط
-              <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-foreground">صور</span>
+              <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-card-foreground">صور</span>
               ،
-              <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-foreground">GIF</span>
+              <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-card-foreground">GIF</span>
               ،
               <span className="px-2 py-0.5 mx-1 rounded-md bg-primary/8 border border-primary/30 font-semibold text-primary">أنمي</span>
               ، أو
-              <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-foreground">إحصائيات الجهاز</span>
+              <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-card-foreground">إحصائيات الجهاز</span>
               بكل سهولة — اصنع
               <span className="px-2 py-0.5 mx-1 rounded-md bg-primary/8 border border-primary/30 font-semibold text-primary">ثيم</span>
               على حساب
@@ -561,7 +561,7 @@ const Index = () => {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="الاسم الكامل"
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white text-card-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
                 />
                 <input
                   required
@@ -569,7 +569,7 @@ const Index = () => {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="رقم الهاتف"
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white text-card-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
                 />
               </div>
 
@@ -582,7 +582,7 @@ const Index = () => {
                   }}
                   required
                 >
-                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border-primary/20 bg-white text-right font-medium">
+                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border-primary/20 bg-white text-card-foreground text-right font-medium">
                     <SelectValue placeholder="اختر الولاية" />
                   </SelectTrigger>
                   <SelectContent className="max-h-72">
@@ -600,7 +600,7 @@ const Index = () => {
                   disabled={!wilayaCode}
                   required
                 >
-                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border-primary/20 bg-white text-right font-medium disabled:opacity-50">
+                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border-primary/20 bg-white text-card-foreground text-right font-medium disabled:opacity-50">
                     <SelectValue placeholder={wilayaCode ? "اختر البلدية" : "اختر الولاية أولاً"} />
                   </SelectTrigger>
                   <SelectContent className="max-h-72">
@@ -617,7 +617,7 @@ const Index = () => {
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder="العنوان بالتفصيل (اختياري)"
-                className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white text-card-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
               />
 
               {/* Color selector */}
