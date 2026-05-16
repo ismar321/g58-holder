@@ -265,7 +265,7 @@ const Index = () => {
                 ].map((t) => (
                   <Card
                     key={t}
-                    className="p-4 sm:p-5 bg-white border border-primary/10 shadow-card flex items-center gap-3 hover:shadow-glow hover:border-primary/20 transition-all duration-500"
+                    className="p-4 sm:p-5 bg-white/5 backdrop-blur border border-white/10 shadow-card flex items-center gap-3 hover:shadow-glow hover:border-primary/40 transition-all duration-500"
                   >
                     <span className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shrink-0 shadow-blue">
                       <Check className="w-5 h-5 text-white" />
