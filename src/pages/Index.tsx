@@ -634,7 +634,7 @@ const Index = () => {
                         key={opt.value}
                         type="button"
                         onClick={() => setColor(opt.value)}
-                        className={`flex items-center justify-center gap-3 px-4 py-3 rounded-lg border-2 transition-all font-semibold ${
+                        className={`flex items-center justify-center gap-3 px-4 py-3 rounded-lg border-2 transition-all font-semibold text-card-foreground ${
                           active
                             ? "border-primary bg-primary/5 shadow-blue"
                             : "border-primary/20 hover:border-primary/50 bg-white"
