@@ -1,39 +1,25 @@
-const PIXEL_ID = '2102357820377408';
+// Meta Pixel base code is loaded in index.html.
+// This file exposes typed helpers to fire events from React.
 
-export const initMetaPixel = () => {
-  if (typeof window === 'undefined') return;
-
-  // Initialize Meta Pixel
-  (function () {
-    let img = new Image();
-    img.src = `https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1`;
-    img.style.display = 'none';
-    document.body.appendChild(img);
-  })();
-
-  // Add Meta Pixel script
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = `https://connect.facebook.net/en_US/fbevents.js`;
-  document.head.appendChild(script);
-
-  script.onload = () => {
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      const fbq = (window as any).fbq;
-      fbq('init', PIXEL_ID);
-      fbq('track', 'PageView');
-    }
-  };
-};
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
 
 export const trackPurchase = () => {
-  if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq('track', 'Purchase');
+  if (typeof window !== "undefined" && typeof window.fbq === "function") {
+    window.fbq("track", "Purchase", {
+      value: 9800,
+      currency: "DZD",
+      content_name: "حامل كرت الشاشة IPS 4.58",
+      content_type: "product",
+    });
   }
 };
 
-export const trackEvent = (eventName: string, data?: any) => {
-  if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq('track', eventName, data);
+export const trackEvent = (eventName: string, data?: Record<string, unknown>) => {
+  if (typeof window !== "undefined" && typeof window.fbq === "function") {
+    window.fbq("track", eventName, data);
   }
 };
