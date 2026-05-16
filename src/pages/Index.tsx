@@ -394,7 +394,7 @@ const Index = () => {
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-black">
               الأبعاد و <span className="text-gradient">طريقة التركيب</span>
             </h2>
-            <p className="text-muted-foreground text-base sm:text-lg">
+            <p className="text-foreground/75 text-base sm:text-lg">
               تصميم مدروس باش يدخل في أغلب الكيسات بسهولة
             </p>
           </div>
