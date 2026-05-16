@@ -567,7 +567,7 @@ const Index = () => {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="الاسم الكامل"
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white text-card-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
                 />
                 <input
                   required
@@ -575,7 +575,7 @@ const Index = () => {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="رقم الهاتف"
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white text-card-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
                 />
               </div>
 
@@ -588,7 +588,7 @@ const Index = () => {
                   }}
                   required
                 >
-                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border-primary/20 bg-white text-card-foreground text-right font-medium">
+                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] text-right font-medium">
                     <SelectValue placeholder="اختر الولاية" />
                   </SelectTrigger>
                   <SelectContent className="max-h-72">
@@ -606,7 +606,7 @@ const Index = () => {
                   disabled={!wilayaCode}
                   required
                 >
-                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border-primary/20 bg-white text-card-foreground text-right font-medium disabled:opacity-50">
+                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] text-right font-medium disabled:opacity-50">
                     <SelectValue placeholder={wilayaCode ? "اختر البلدية" : "اختر الولاية أولاً"} />
                   </SelectTrigger>
                   <SelectContent className="max-h-72">
@@ -623,7 +623,7 @@ const Index = () => {
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder="العنوان بالتفصيل (اختياري)"
-                className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white text-card-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
               />
 
               {/* Color selector */}
