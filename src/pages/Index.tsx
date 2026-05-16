@@ -53,7 +53,8 @@ const CTAButton = ({
   <Button
     onClick={scrollToOrder}
     size="lg"
-    className={`bg-gradient-primary text-primary-foreground hover:opacity-90 hover:scale-105 transition-all duration-300 text-base sm:text-lg md:text-lg font-bold px-6 sm:px-8 py-5 sm:py-6 rounded-lg w-full sm:w-auto shadow-blue ${className}`}
+    style={{ minWidth: 260, padding: "18px 40px", fontSize: 20, fontWeight: 800 }}
+    className={`cta-pulse bg-gradient-primary text-primary-foreground hover:opacity-95 hover:scale-105 transition-all duration-300 rounded-xl w-full sm:w-auto shadow-blue ${className}`}
   >
     {children}
     <ArrowLeft className="w-5 h-5 mr-2" />
@@ -115,11 +116,30 @@ const Index = () => {
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-hero py-8 sm:py-12 md:py-16">
         <div className="absolute inset-0 grid-bg opacity-30" />
-        <div className="absolute top-0 -left-32 w-80 h-80 rounded-full bg-primary/6 blur-3xl" />
-        <div className="absolute bottom-0 -right-32 w-72 h-72 rounded-full bg-accent/4 blur-3xl" />
+        <div className="absolute top-0 -left-32 w-80 h-80 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute bottom-0 -right-32 w-72 h-72 rounded-full bg-accent/10 blur-3xl" />
 
         <div className="container relative px-4">
-          {/* Gallery Images First */}
+          {/* Headline ABOVE images */}
+          <div className="max-w-3xl mx-auto space-y-6 text-center fade-in mb-10 sm:mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/10 backdrop-blur border border-primary/30 shadow-card mx-auto">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-sm font-bold text-foreground">جديد · إصدار محدود</span>
+            </div>
+
+            <h1
+              className="leading-tight font-black text-foreground text-glow"
+              style={{ fontSize: "clamp(28px, 6vw, 56px)" }}
+            >
+              خلي Setup تاعك <span className="text-gradient">Level آخر</span> 🔥
+            </h1>
+
+            <p className="text-lg sm:text-xl md:text-2xl text-foreground/90 font-semibold leading-relaxed">
+              حامل GPU ذكي مع شاشة <span className="text-gradient font-bold">IPS 4.58"</span> تعرض معلومات جهازك مباشرة داخل الكيس
+            </p>
+          </div>
+
+          {/* Gallery Images Below */}
           <div className="mb-12 sm:mb-16">
             <div className="relative mx-auto max-w-3xl">
               <Carousel
@@ -147,7 +167,7 @@ const Index = () => {
                           sizes="(max-width: 640px) 95vw, (max-width: 1024px) 85vw, 50vw"
                           className="rounded-2xl w-full aspect-[4/3] object-cover transition-transform duration-700 ease-out group-hover:scale-105 bg-muted shadow-card"
                         />
-                        <span className="absolute bottom-3 right-3 flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm border border-primary/20 text-xs font-bold text-foreground">
+                        <span className="absolute bottom-3 right-3 flex items-center gap-1 px-3 py-1.5 rounded-full bg-card/90 backdrop-blur-sm border border-primary/20 text-xs font-bold text-card-foreground">
                           <ZoomIn className="w-3.5 h-3.5 text-primary" /> تكبير
                         </span>
                         <span dir="ltr" className="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-primary/80 text-white text-xs font-black tabular-nums">
@@ -161,7 +181,6 @@ const Index = () => {
                 <CarouselNext className="hidden sm:flex -left-4 right-auto border-primary/30 hover:bg-primary/10" />
               </Carousel>
 
-              {/* Slide indicator dots */}
               <div className="flex items-center justify-center gap-2 mt-6">
                 {galleryImages.map((_, i) => (
                   <button
@@ -172,7 +191,7 @@ const Index = () => {
                     className={`h-2 rounded-full transition-all duration-300 ${
                       currentSlide === i
                         ? "w-8 bg-gradient-primary shadow-blue"
-                        : "w-2 bg-border hover:bg-primary/50"
+                        : "w-2 bg-border/40 hover:bg-primary/50"
                     }`}
                   />
                 ))}
@@ -180,21 +199,8 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Text Content Below Images */}
-          <div className="max-w-3xl mx-auto space-y-6 text-center fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/20 shadow-card mx-auto">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-bold text-foreground">جديد · إصدار محدود</span>
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-black">
-              خلي Setup تاعك <span className="text-gradient">Level آخر</span> 🔥
-            </h1>
-
-            <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 font-semibold leading-relaxed">
-              حامل GPU ذكي مع شاشة <span className="text-gradient font-bold">IPS 4.58"</span> تعرض معلومات جهازك مباشرة داخل الكيس
-            </p>
-
+          {/* Features + Price + CTA */}
+          <div className="max-w-3xl mx-auto space-y-6 text-center">
             <ul className="space-y-2.5 max-w-2xl mx-auto">
               {[
                 "يحمي كرت الشاشة من الانحناء وكسر اللوحة الأم",
@@ -206,21 +212,25 @@ const Index = () => {
                   <span className="w-6 h-6 rounded-full bg-gradient-primary flex items-center justify-center shrink-0 shadow-blue">
                     <Check className="w-3.5 h-3.5 text-white" />
                   </span>
-                  <span className="text-base md:text-lg font-medium">{t}</span>
+                  <span className="text-base md:text-lg font-semibold text-foreground/95">{t}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-4 justify-center">
-              <div className="flex items-baseline gap-2 px-5 sm:px-6 py-3 sm:py-4 rounded-lg bg-white border border-primary/15 shadow-card">
-                <span className="text-sm text-muted-foreground">السعر:</span>
-                <span className="text-3xl sm:text-4xl font-black text-gradient">9800</span>
-                <span className="font-bold text-foreground">دج</span>
+            <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center">
+              <div className="relative inline-flex items-baseline gap-2 px-7 py-4 rounded-2xl bg-card/10 backdrop-blur border-2 border-primary/40 shadow-glow">
+                <span className="absolute -top-3 right-4 px-3 py-0.5 rounded-full bg-gradient-primary text-white text-xs font-black shadow-blue">
+                  السعر
+                </span>
+                <span className="font-black text-gradient price-glow" style={{ fontSize: "clamp(36px, 7vw, 56px)" }}>
+                  9800
+                </span>
+                <span className="text-xl font-black text-foreground">دج</span>
               </div>
               <CTAButton>اطلب الآن</CTAButton>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 justify-center text-xs sm:text-sm text-muted-foreground pt-2">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 justify-center text-xs sm:text-sm text-foreground/70 pt-2">
               <span className="flex items-center gap-1"><Truck className="w-4 h-4 text-primary" /> توصيل لكامل الولايات</span>
               <span className="flex items-center gap-1"><Shield className="w-4 h-4 text-primary" /> دفع عند الاستلام</span>
             </div>
@@ -229,7 +239,7 @@ const Index = () => {
       </section>
 
       {/* PROBLEM + SOLUTION */}
-      <section className="py-14 sm:py-20 relative overflow-hidden bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-14 sm:py-20 relative overflow-hidden bg-transparent">
         <div className="absolute inset-0 grid-bg opacity-15" />
         <div className="container relative max-w-7xl px-4">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 items-start mb-10 sm:mb-12">
@@ -312,13 +322,13 @@ const Index = () => {
       </section>
 
       {/* VMAX SOFTWARE */}
-      <section className="py-16 sm:py-24 relative overflow-hidden bg-gradient-to-br from-sky-50 via-blue-50 to-white">
+      <section className="py-16 sm:py-24 relative overflow-hidden bg-transparent">
         <div className="absolute inset-0 grid-bg opacity-15" />
         <div className="absolute top-1/4 right-1/3 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute -bottom-10 left-1/4 w-80 h-80 rounded-full bg-accent/4 blur-3xl" />
         <div className="container relative max-w-6xl px-4">
           <div className="text-center mb-12 sm:mb-14 space-y-5">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-primary/20 shadow-card">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-card-foreground border border-primary/20 shadow-card">
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-black tracking-wide text-foreground">برنامج VMAX</span>
             </div>
@@ -327,17 +337,17 @@ const Index = () => {
               <br className="hidden sm:block" /> ببرنامج <span className="text-gradient">VMAX</span>
             </h2>
             <p className="text-foreground/70 text-base sm:text-lg max-w-3xl mx-auto leading-loose">
-              برنامج <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-foreground">VMAX</span>
+              برنامج <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-card-foreground">VMAX</span>
               خفيف وغير متطلب على الجهاز، يخليك تبدّل
               <span className="px-2 py-0.5 mx-1 rounded-md bg-primary/8 border border-primary/30 font-semibold text-primary">الثيمات</span>
               ، تحط
-              <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-foreground">صور</span>
+              <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-card-foreground">صور</span>
               ،
-              <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-foreground">GIF</span>
+              <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-card-foreground">GIF</span>
               ،
               <span className="px-2 py-0.5 mx-1 rounded-md bg-primary/8 border border-primary/30 font-semibold text-primary">أنمي</span>
               ، أو
-              <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-foreground">إحصائيات الجهاز</span>
+              <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-card-foreground">إحصائيات الجهاز</span>
               بكل سهولة — اصنع
               <span className="px-2 py-0.5 mx-1 rounded-md bg-primary/8 border border-primary/30 font-semibold text-primary">ثيم</span>
               على حساب
@@ -372,7 +382,7 @@ const Index = () => {
       </section>
 
       {/* DIMENSIONS & INSTALLATION */}
-      <section className="py-14 sm:py-20 bg-white">
+      <section className="py-14 sm:py-20 bg-transparent">
         <div className="container max-w-6xl px-4">
           <div className="text-center mb-10 sm:mb-12 space-y-3">
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-black">
@@ -477,7 +487,7 @@ const Index = () => {
       </section>
 
       {/* ORDER FORM */}
-      <section id="order" className="py-14 sm:py-20 relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-white">
+      <section id="order" className="py-14 sm:py-20 relative overflow-hidden bg-transparent">
         <div className="absolute inset-0 grid-bg opacity-15" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-80 bg-primary/6 blur-3xl rounded-full" />
         <div className="container relative max-w-2xl px-4">
@@ -524,7 +534,7 @@ const Index = () => {
                 };
 
                 try {
-                  // Send request without waiting for response
+                  // Fire-and-forget to Google Sheets (no-cors → opaque response is OK)
                   fetch(
                     "https://script.google.com/macros/s/AKfycbwyqf4c2m5gqRFDMdrUl8U5A41nSVuV5DXbdV4uvtshWVhXGNhdU6r2o1Ka4Xn34Kdc/exec",
                     {
@@ -534,12 +544,9 @@ const Index = () => {
                       body: JSON.stringify(orderData),
                     },
                   ).catch(() => {});
-
-                  // Redirect immediately without waiting
-                  window.location.href = "/thank-you";
-                } catch (error) {
-                  console.error(error);
-                  setSubmitting(false);
+                } finally {
+                  // SPA navigation — renders ThankYou in-app, no 404, Purchase pixel fires there
+                  navigate("/thank-you");
                 }
               }}
             >
@@ -554,7 +561,7 @@ const Index = () => {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="الاسم الكامل"
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white text-card-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
                 />
                 <input
                   required
@@ -562,7 +569,7 @@ const Index = () => {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="رقم الهاتف"
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white text-card-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
                 />
               </div>
 
@@ -575,7 +582,7 @@ const Index = () => {
                   }}
                   required
                 >
-                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border-primary/20 bg-white text-right font-medium">
+                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border-primary/20 bg-white text-card-foreground text-right font-medium">
                     <SelectValue placeholder="اختر الولاية" />
                   </SelectTrigger>
                   <SelectContent className="max-h-72">
@@ -593,7 +600,7 @@ const Index = () => {
                   disabled={!wilayaCode}
                   required
                 >
-                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border-primary/20 bg-white text-right font-medium disabled:opacity-50">
+                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border-primary/20 bg-white text-card-foreground text-right font-medium disabled:opacity-50">
                     <SelectValue placeholder={wilayaCode ? "اختر البلدية" : "اختر الولاية أولاً"} />
                   </SelectTrigger>
                   <SelectContent className="max-h-72">
@@ -610,7 +617,7 @@ const Index = () => {
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder="العنوان بالتفصيل (اختياري)"
-                className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white text-card-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
               />
 
               {/* Color selector */}
@@ -627,7 +634,7 @@ const Index = () => {
                         key={opt.value}
                         type="button"
                         onClick={() => setColor(opt.value)}
-                        className={`flex items-center justify-center gap-3 px-4 py-3 rounded-lg border-2 transition-all font-semibold ${
+                        className={`flex items-center justify-center gap-3 px-4 py-3 rounded-lg border-2 transition-all font-semibold text-card-foreground ${
                           active
                             ? "border-primary bg-primary/5 shadow-blue"
                             : "border-primary/20 hover:border-primary/50 bg-white"
@@ -663,7 +670,7 @@ const Index = () => {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-10 border-t border-primary/10 bg-white">
+      <footer className="py-10 border-t border-primary/10 bg-card/5 backdrop-blur">
         <div className="container text-center space-y-3">
           <div className="flex items-center justify-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center shadow-blue">

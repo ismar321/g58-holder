@@ -7,23 +7,23 @@ import { trackPurchase } from "@/lib/meta-pixel";
 
 const ThankYou = () => {
   useEffect(() => {
-    // Track purchase event only once per page load
+    // Fire Purchase pixel only when Thank You page becomes visible
     trackPurchase();
   }, []);
 
   return (
-    <div dir="rtl" className="min-h-screen bg-gradient-to-b from-blue-50 to-white text-foreground flex items-center justify-center px-4 py-10">
-      <Card className="max-w-xl w-full p-8 sm:p-12 text-center bg-white border border-primary/15 shadow-card space-y-6">
+    <div dir="rtl" className="min-h-screen text-foreground flex items-center justify-center px-4 py-10">
+      <Card className="max-w-xl w-full p-8 sm:p-12 text-center bg-card/95 backdrop-blur border border-primary/25 shadow-glow space-y-6">
         <div className="mx-auto w-20 h-20 rounded-full bg-gradient-primary flex items-center justify-center shadow-blue animate-pulse-glow">
           <CheckCircle2 className="w-10 h-10 text-white" />
         </div>
         <h1 className="text-3xl sm:text-4xl font-black text-foreground">
           تم استلام طلبك <span className="text-gradient">بنجاح</span> 🎉
         </h1>
-        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+        <p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
           شكراً على ثقتك! فريقنا راح يتصل بيك في أقرب وقت لتأكيد الطلبية وتفاصيل التوصيل.
         </p>
-        <div className="flex items-center justify-center gap-2 text-sm text-foreground bg-blue-50 border border-primary/20 rounded-lg py-3 px-4">
+        <div className="flex items-center justify-center gap-2 text-sm text-foreground bg-primary/10 border border-primary/30 rounded-lg py-3 px-4">
           <PhoneCall className="w-4 h-4 text-primary" />
           <span>تأكد من أن هاتفك متاح للمكالمة</span>
         </div>
