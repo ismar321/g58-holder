@@ -637,12 +637,15 @@ const Index = () => {
                   }}
                   required
                 >
-                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] text-right font-medium">
+                  <SelectTrigger
+                    className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg text-right font-medium"
+                    style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.2)", color: "#ffffff" }}
+                  >
                     <SelectValue placeholder="اختر الولاية" />
                   </SelectTrigger>
-                  <SelectContent className="max-h-72">
+                  <SelectContent className="max-h-72" style={{ background: "#0f172a", border: "1px solid rgba(255,255,255,0.15)" }}>
                     {wilayas.map((w) => (
-                      <SelectItem key={w.code} value={w.code} className="text-right">
+                      <SelectItem key={w.code} value={w.code} className="text-right" style={{ color: "#ffffff" }}>
                         {w.code} - {w.name}
                       </SelectItem>
                     ))}
@@ -655,12 +658,15 @@ const Index = () => {
                   disabled={!wilayaCode}
                   required
                 >
-                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] text-right font-medium disabled:opacity-50">
+                  <SelectTrigger
+                    className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg text-right font-medium disabled:opacity-50"
+                    style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.2)", color: "#ffffff" }}
+                  >
                     <SelectValue placeholder={wilayaCode ? "اختر البلدية" : "اختر الولاية أولاً"} />
                   </SelectTrigger>
-                  <SelectContent className="max-h-72">
+                  <SelectContent className="max-h-72" style={{ background: "#0f172a", border: "1px solid rgba(255,255,255,0.15)" }}>
                     {communes.map((c) => (
-                      <SelectItem key={c} value={c} className="text-right">
+                      <SelectItem key={c} value={c} className="text-right" style={{ color: "#ffffff" }}>
                         {c}
                       </SelectItem>
                     ))}
@@ -672,7 +678,14 @@ const Index = () => {
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder="العنوان بالتفصيل (اختياري)"
-                className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg text-right font-medium"
+                style={{
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  color: "#ffffff",
+                }}
+                onFocus={(e) => { e.currentTarget.style.borderColor = "#00c8ff"; }}
+                onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; }}
               />
 
               {/* Color selector */}
