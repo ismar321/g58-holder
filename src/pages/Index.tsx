@@ -628,11 +628,11 @@ const Index = () => {
 
               {/* Color selector */}
               <div className="space-y-2 pt-1">
-                <label className="block text-sm font-bold text-foreground">اختر اللون</label>
+                <label className="block text-sm font-bold" style={{ color: "#1e293b" }}>اختر اللون</label>
                 <div className="grid grid-cols-2 gap-3">
                   {([
-                    { value: "أبيض", swatch: "bg-white border-primary/30", text: "text-foreground" },
-                    { value: "أسود", swatch: "bg-gray-900 border-primary/30", text: "text-white" },
+                    { value: "أبيض", swatch: "bg-white border-slate-300" },
+                    { value: "أسود", swatch: "bg-gray-900 border-slate-300" },
                   ] as const).map((opt) => {
                     const active = color === opt.value;
                     return (
@@ -640,10 +640,10 @@ const Index = () => {
                         key={opt.value}
                         type="button"
                         onClick={() => setColor(opt.value)}
-                        className={`flex items-center justify-center gap-3 px-4 py-3 rounded-lg border-2 transition-all font-semibold text-card-foreground ${
+                        className={`flex items-center justify-center gap-3 px-4 py-3 rounded-lg border-2 transition-all font-semibold ${
                           active
-                            ? "border-primary bg-primary/5 shadow-blue"
-                            : "border-primary/20 hover:border-primary/50 bg-white"
+                            ? "border-primary bg-primary/5 shadow-blue text-[#1e293b]"
+                            : "border-slate-200 hover:border-primary/50 bg-[#f8fafc] text-[#1e293b]"
                         }`}
                       >
                         <span className={`w-6 h-6 rounded-full border-2 ${opt.swatch}`} />
