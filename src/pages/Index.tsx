@@ -592,8 +592,8 @@ const Index = () => {
               }}
             >
               {/* Required Fields Indicator */}
-              <div className="text-xs text-muted-foreground text-right mb-3">
-                <span className="text-destructive font-bold">*</span> الحقول المطلوبة
+              <div className="text-xs text-right mb-3" style={{ color: "#94a3b8" }}>
+                <span className="font-bold" style={{ color: "#ef4444" }}>*</span> الحقول المطلوبة
               </div>
 
               <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
