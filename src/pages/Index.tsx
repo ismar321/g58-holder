@@ -53,7 +53,8 @@ const CTAButton = ({
   <Button
     onClick={scrollToOrder}
     size="lg"
-    className={`bg-gradient-primary text-primary-foreground hover:opacity-90 hover:scale-105 transition-all duration-300 text-base sm:text-lg md:text-lg font-bold px-6 sm:px-8 py-5 sm:py-6 rounded-lg w-full sm:w-auto shadow-blue ${className}`}
+    style={{ minWidth: 260, padding: "18px 40px", fontSize: 20, fontWeight: 800 }}
+    className={`cta-pulse bg-gradient-primary text-primary-foreground hover:opacity-95 hover:scale-105 transition-all duration-300 rounded-xl w-full sm:w-auto shadow-blue ${className}`}
   >
     {children}
     <ArrowLeft className="w-5 h-5 mr-2" />
