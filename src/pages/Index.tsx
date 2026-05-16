@@ -292,9 +292,9 @@ const Index = () => {
                 ].map((t) => (
                   <Card
                     key={t}
-                    className="p-4 sm:p-5 bg-white border border-destructive/10 shadow-card flex items-center gap-3 hover:shadow-glow hover:border-destructive/20 transition-all duration-500"
+                    className="p-4 sm:p-5 bg-white/5 backdrop-blur border border-destructive/20 shadow-card flex items-center gap-3 hover:shadow-glow hover:border-destructive/40 transition-all duration-500"
                   >
-                    <span className="w-10 h-10 rounded-lg bg-destructive/10 flex items-center justify-center shrink-0">
+                    <span className="w-10 h-10 rounded-lg bg-destructive/20 flex items-center justify-center shrink-0">
                       <AlertTriangle className="w-5 h-5 text-destructive" />
                     </span>
                     <p className="text-sm sm:text-base font-semibold leading-relaxed text-foreground">{t}</p>
