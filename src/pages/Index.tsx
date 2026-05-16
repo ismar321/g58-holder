@@ -690,7 +690,7 @@ const Index = () => {
 
               {/* Color selector */}
               <div className="space-y-2 pt-1">
-                <label className="block text-sm font-bold" style={{ color: "#1e293b" }}>اختر اللون</label>
+                <label className="block text-sm font-semibold text-white">اختر اللون</label>
                 <div className="grid grid-cols-2 gap-3">
                   {([
                     { value: "أبيض", swatch: "bg-white border-slate-300" },
@@ -704,9 +704,12 @@ const Index = () => {
                         onClick={() => setColor(opt.value)}
                         className={`flex items-center justify-center gap-3 px-4 py-3 rounded-lg border-2 transition-all font-semibold ${
                           active
-                            ? "border-primary bg-primary/5 shadow-blue text-[#1e293b]"
-                            : "border-slate-200 hover:border-primary/50 bg-[#f8fafc] text-[#1e293b]"
+                            ? "border-primary shadow-blue text-white"
+                            : "border-white/20 hover:border-primary/50 text-white"
                         }`}
+                        style={{
+                          background: active ? "rgba(0,200,255,0.12)" : "rgba(255,255,255,0.05)",
+                        }}
                       >
                         <span className={`w-6 h-6 rounded-full border-2 ${opt.swatch}`} />
                         <span>{opt.value}</span>
