@@ -229,8 +229,8 @@ const Index = () => {
               >
                 <span style={{ fontSize: 12, color: "#94a3b8", fontWeight: 600, letterSpacing: 1 }}>السعر</span>
                 <div className="flex items-baseline gap-2">
-                  <span style={{ fontSize: 36, fontWeight: 800, color: "#00c8ff", lineHeight: 1 }}>9800</span>
-                  <span style={{ fontSize: 16, fontWeight: 700, color: "#cbd5e1" }}>دج</span>
+                  <span style={{ fontSize: 48, fontWeight: 900, color: "#00c8ff", lineHeight: 1, textShadow: "0 0 20px rgba(0,200,255,0.5)" }}>9.800</span>
+                  <span style={{ fontSize: 18, fontWeight: 700, color: "#cbd5e1" }}>دج</span>
                 </div>
               </div>
               <CTAButton>اطلب الآن</CTAButton>
@@ -260,8 +260,8 @@ const Index = () => {
               <div className="space-y-3">
                 {[
                   "يحمي كرت الشاشة من الانحناء والكسر",
-                  "يثبت اللوحة الأم ويوزع الوزن مزيان",
-                  "تصميم RGB يعطي Setup احترافي ومميز",
+                  "شاشة IPS بمعدل تحديث عالي تعرض كل معطيات جهازك: CPU، GPU، FPS، درجة الحرارة وحتى أحوال الطقس",
+                  "راقب أداء جهازك مباشرة داخل الكيس — كل المعلومات في متناول نظرك بشكل أنيق واحترافي",
                 ].map((t) => (
                   <Card
                     key={t}
@@ -421,7 +421,7 @@ const Index = () => {
                 {
                   icon: Wrench,
                   title: "تركيب فوق مراوح الكيس",
-                  desc: "تقدر تركبو فوق مراوح الكيس عادي وتزيرو، فيه قاعدة عريضة تثبتو مزيان",
+                  desc: "تقدر تركبو فوق مراوح الكيس عادي وتزيرو، فيه قاعدة عريضة تثبتو بقوة",
                 },
                 {
                   icon: Usb,
