@@ -217,23 +217,54 @@ const Index = () => {
               ))}
             </ul>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center">
+            <div className="flex flex-col items-center gap-4 pt-4">
               <div
-                className="inline-flex flex-col items-center"
                 style={{
-                  background: "linear-gradient(135deg, #1e3a5f, #0f2744)",
-                  border: "1px solid rgba(0,200,255,0.3)",
-                  borderRadius: 16,
-                  padding: "16px 32px",
+                  background: "linear-gradient(135deg, rgba(0,200,255,0.08), rgba(139,92,246,0.08))",
+                  border: "1px solid rgba(0,200,255,0.25)",
+                  borderRadius: 20,
+                  padding: "24px 40px",
+                  textAlign: "center",
+                  maxWidth: 320,
+                  margin: "0 auto",
+                  width: "100%",
                 }}
               >
-                <span style={{ fontSize: 12, color: "#94a3b8", fontWeight: 600, letterSpacing: 1 }}>السعر</span>
-                <div className="flex items-baseline gap-2">
-                  <span style={{ fontSize: 48, fontWeight: 900, color: "#00c8ff", lineHeight: 1, textShadow: "0 0 20px rgba(0,200,255,0.5)" }}>9.800</span>
-                  <span style={{ fontSize: 18, fontWeight: 700, color: "#cbd5e1" }}>دج</span>
+                <div style={{ fontSize: 14, color: "#94a3b8", marginBottom: 8 }}>🏷️ السعر</div>
+                <div
+                  style={{
+                    fontSize: 52,
+                    fontWeight: 900,
+                    color: "#00c8ff",
+                    lineHeight: 1.1,
+                    textShadow: "0 0 30px rgba(0,200,255,0.6)",
+                  }}
+                >
+                  9.800 دج
+                </div>
+                <div style={{ fontSize: 13, color: "#10b981", marginTop: 8, fontWeight: 600 }}>
+                  الدفع عند الاستلام ✓
                 </div>
               </div>
-              <CTAButton>اطلب الآن</CTAButton>
+              <button
+                type="button"
+                onClick={scrollToOrder}
+                className="cta-pulse w-full sm:w-auto"
+                style={{
+                  background: "linear-gradient(135deg, #00c8ff, #7c3aed)",
+                  color: "white",
+                  fontSize: 22,
+                  fontWeight: 800,
+                  padding: "20px 60px",
+                  borderRadius: 50,
+                  border: "none",
+                  boxShadow: "0 8px 32px rgba(0,200,255,0.4)",
+                  marginTop: 16,
+                  cursor: "pointer",
+                }}
+              >
+                اطلب الآن ←
+              </button>
             </div>
 
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 justify-center text-xs sm:text-sm text-foreground/70 pt-2">
@@ -249,34 +280,7 @@ const Index = () => {
         <div className="absolute inset-0 grid-bg opacity-15" />
         <div className="container relative max-w-7xl px-4">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 items-start mb-10 sm:mb-12">
-            {/* Solution column */}
-            <div className="space-y-5">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/8 text-primary font-bold text-sm border border-primary/20">
-                <Sparkles className="w-4 h-4" /> الحل
-              </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl leading-tight font-black">
-                <span className="text-gradient">Upgrade كامل</span> للـ Setup
-              </h2>
-              <div className="space-y-3">
-                {[
-                  "يحمي كرت الشاشة من الانحناء والكسر",
-                  "شاشة IPS بمعدل تحديث عالي تعرض كل معطيات جهازك: CPU، GPU، FPS، درجة الحرارة وحتى أحوال الطقس",
-                  "راقب أداء جهازك مباشرة داخل الكيس — كل المعلومات في متناول نظرك بشكل أنيق واحترافي",
-                ].map((t) => (
-                  <Card
-                    key={t}
-                    className="p-4 sm:p-5 bg-white/5 backdrop-blur border border-white/10 shadow-card flex items-center gap-3 hover:shadow-glow hover:border-primary/40 transition-all duration-500"
-                  >
-                    <span className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shrink-0 shadow-blue">
-                      <Check className="w-5 h-5 text-white" />
-                    </span>
-                    <p className="text-sm sm:text-base font-semibold leading-relaxed text-foreground">{t}</p>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* Problem column */}
+            {/* Problem column (now first) */}
             <div className="space-y-5">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-destructive/8 text-destructive font-bold text-sm border border-destructive/20">
                 <AlertTriangle className="w-4 h-4" /> المشكلة
@@ -296,6 +300,33 @@ const Index = () => {
                   >
                     <span className="w-10 h-10 rounded-lg bg-destructive/20 flex items-center justify-center shrink-0">
                       <AlertTriangle className="w-5 h-5 text-destructive" />
+                    </span>
+                    <p className="text-sm sm:text-base font-semibold leading-relaxed text-foreground">{t}</p>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Solution column (now second) */}
+            <div className="space-y-5">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/8 text-primary font-bold text-sm border border-primary/20">
+                <Sparkles className="w-4 h-4" /> الحل
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl leading-tight font-black">
+                <span className="text-gradient">Upgrade كامل</span> للـ Setup
+              </h2>
+              <div className="space-y-3">
+                {[
+                  "يحمي كرت الشاشة من الانحناء والكسر",
+                  "شاشة IPS بمعدل تحديث عالي تعرض كل معطيات جهازك: CPU، GPU، FPS، درجة الحرارة وحتى أحوال الطقس",
+                  "راقب أداء جهازك مباشرة داخل الكيس — كل المعلومات في متناول نظرك بشكل أنيق واحترافي",
+                ].map((t) => (
+                  <Card
+                    key={t}
+                    className="p-4 sm:p-5 bg-white/5 backdrop-blur border border-white/10 shadow-card flex items-center gap-3 hover:shadow-glow hover:border-primary/40 transition-all duration-500"
+                  >
+                    <span className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shrink-0 shadow-blue">
+                      <Check className="w-5 h-5 text-white" />
                     </span>
                     <p className="text-sm sm:text-base font-semibold leading-relaxed text-foreground">{t}</p>
                   </Card>
@@ -370,13 +401,17 @@ const Index = () => {
               { src: themesEye, alt: "ثيم عين أنمي حمراء" },
             ].map((img) => (
               <div key={img.src} className="group overflow-hidden rounded-2xl shadow-card border border-primary/10 hover:shadow-glow transition-all duration-500">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-110 bg-muted"
-                />
+                <div className="aspect-[3/4] w-full overflow-hidden" style={{ background: "linear-gradient(135deg, #1a1f3a, #0d1528)" }}>
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    decoding="async"
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.visibility = "hidden"; }}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                    className="transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
               </div>
             ))}
           </div>
