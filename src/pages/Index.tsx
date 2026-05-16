@@ -218,14 +218,20 @@ const Index = () => {
             </ul>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center">
-              <div className="relative inline-flex items-baseline gap-2 px-7 py-4 rounded-2xl bg-card/10 backdrop-blur border-2 border-primary/40 shadow-glow">
-                <span className="absolute -top-3 right-4 px-3 py-0.5 rounded-full bg-gradient-primary text-white text-xs font-black shadow-blue">
-                  السعر
-                </span>
-                <span className="font-black text-gradient price-glow" style={{ fontSize: "clamp(36px, 7vw, 56px)" }}>
-                  9800
-                </span>
-                <span className="text-xl font-black text-foreground">دج</span>
+              <div
+                className="inline-flex flex-col items-center"
+                style={{
+                  background: "linear-gradient(135deg, #1e3a5f, #0f2744)",
+                  border: "1px solid rgba(0,200,255,0.3)",
+                  borderRadius: 16,
+                  padding: "16px 32px",
+                }}
+              >
+                <span style={{ fontSize: 12, color: "#94a3b8", fontWeight: 600, letterSpacing: 1 }}>السعر</span>
+                <div className="flex items-baseline gap-2">
+                  <span style={{ fontSize: 36, fontWeight: 800, color: "#00c8ff", lineHeight: 1 }}>9800</span>
+                  <span style={{ fontSize: 16, fontWeight: 700, color: "#cbd5e1" }}>دج</span>
+                </div>
               </div>
               <CTAButton>اطلب الآن</CTAButton>
             </div>
@@ -259,7 +265,7 @@ const Index = () => {
                 ].map((t) => (
                   <Card
                     key={t}
-                    className="p-4 sm:p-5 bg-white border border-primary/10 shadow-card flex items-center gap-3 hover:shadow-glow hover:border-primary/20 transition-all duration-500"
+                    className="p-4 sm:p-5 bg-white/5 backdrop-blur border border-white/10 shadow-card flex items-center gap-3 hover:shadow-glow hover:border-primary/40 transition-all duration-500"
                   >
                     <span className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shrink-0 shadow-blue">
                       <Check className="w-5 h-5 text-white" />
@@ -286,9 +292,9 @@ const Index = () => {
                 ].map((t) => (
                   <Card
                     key={t}
-                    className="p-4 sm:p-5 bg-white border border-destructive/10 shadow-card flex items-center gap-3 hover:shadow-glow hover:border-destructive/20 transition-all duration-500"
+                    className="p-4 sm:p-5 bg-white/5 backdrop-blur border border-destructive/20 shadow-card flex items-center gap-3 hover:shadow-glow hover:border-destructive/40 transition-all duration-500"
                   >
-                    <span className="w-10 h-10 rounded-lg bg-destructive/10 flex items-center justify-center shrink-0">
+                    <span className="w-10 h-10 rounded-lg bg-destructive/20 flex items-center justify-center shrink-0">
                       <AlertTriangle className="w-5 h-5 text-destructive" />
                     </span>
                     <p className="text-sm sm:text-base font-semibold leading-relaxed text-foreground">{t}</p>
@@ -300,7 +306,7 @@ const Index = () => {
 
           {/* Video */}
           <div className="mx-auto w-full max-w-4xl">
-            <div className="rounded-2xl overflow-hidden video-glow bg-white border border-primary/10 shadow-card">
+            <div className="rounded-2xl overflow-hidden video-glow bg-black/40 border border-white/10 shadow-card">
               <video
                 src="https://res.cloudinary.com/dtnljybtv/video/upload/v1778748551/LSA_hpktlj.mp4"
                 autoPlay
@@ -328,7 +334,7 @@ const Index = () => {
         <div className="absolute -bottom-10 left-1/4 w-80 h-80 rounded-full bg-accent/4 blur-3xl" />
         <div className="container relative max-w-6xl px-4">
           <div className="text-center mb-12 sm:mb-14 space-y-5">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-card-foreground border border-primary/20 shadow-card">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur text-foreground border border-white/15 shadow-card">
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-black tracking-wide text-foreground">برنامج VMAX</span>
             </div>
@@ -337,17 +343,17 @@ const Index = () => {
               <br className="hidden sm:block" /> ببرنامج <span className="text-gradient">VMAX</span>
             </h2>
             <p className="text-foreground/70 text-base sm:text-lg max-w-3xl mx-auto leading-loose">
-              برنامج <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-card-foreground">VMAX</span>
+              برنامج <span className="px-2 py-0.5 mx-1 rounded-md bg-white/10 border border-white/15 font-semibold text-foreground">VMAX</span>
               خفيف وغير متطلب على الجهاز، يخليك تبدّل
               <span className="px-2 py-0.5 mx-1 rounded-md bg-primary/8 border border-primary/30 font-semibold text-primary">الثيمات</span>
               ، تحط
-              <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-card-foreground">صور</span>
+              <span className="px-2 py-0.5 mx-1 rounded-md bg-white/10 border border-white/15 font-semibold text-foreground">صور</span>
               ،
-              <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-card-foreground">GIF</span>
+              <span className="px-2 py-0.5 mx-1 rounded-md bg-white/10 border border-white/15 font-semibold text-foreground">GIF</span>
               ،
               <span className="px-2 py-0.5 mx-1 rounded-md bg-primary/8 border border-primary/30 font-semibold text-primary">أنمي</span>
               ، أو
-              <span className="px-2 py-0.5 mx-1 rounded-md bg-white border border-primary/20 font-semibold text-card-foreground">إحصائيات الجهاز</span>
+              <span className="px-2 py-0.5 mx-1 rounded-md bg-white/10 border border-white/15 font-semibold text-foreground">إحصائيات الجهاز</span>
               بكل سهولة — اصنع
               <span className="px-2 py-0.5 mx-1 rounded-md bg-primary/8 border border-primary/30 font-semibold text-primary">ثيم</span>
               على حساب
@@ -388,7 +394,7 @@ const Index = () => {
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-black">
               الأبعاد و <span className="text-gradient">طريقة التركيب</span>
             </h2>
-            <p className="text-muted-foreground text-base sm:text-lg">
+            <p className="text-foreground/75 text-base sm:text-lg">
               تصميم مدروس باش يدخل في أغلب الكيسات بسهولة
             </p>
           </div>
@@ -430,14 +436,14 @@ const Index = () => {
               ].map(({ icon: Icon, title, desc }) => (
                 <Card
                   key={title}
-                  className="p-4 sm:p-5 bg-white border border-primary/10 shadow-card flex items-start gap-4 hover:shadow-glow hover:border-primary/20 transition-all duration-500"
+                  className="p-4 sm:p-5 bg-white/5 backdrop-blur border border-white/10 shadow-card flex items-start gap-4 hover:shadow-glow hover:border-primary/40 transition-all duration-500"
                 >
                   <span className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center shrink-0 shadow-blue">
                     <Icon className="w-6 h-6 text-white" />
                   </span>
                   <div>
                     <h3 className="text-lg sm:text-xl font-bold text-foreground mb-1">{title}</h3>
-                    <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">{desc}</p>
+                    <p className="text-foreground/70 text-sm sm:text-base leading-relaxed">{desc}</p>
                   </div>
                 </Card>
               ))}
@@ -452,7 +458,7 @@ const Index = () => {
               { src: dimAccessories, alt: "محتويات العلبة والإكسسوارات" },
             ].map((img) => (
               <div key={img.src} className="group overflow-hidden rounded-2xl shadow-card border border-primary/10 hover:shadow-glow transition-all duration-500">
-                <div className="aspect-[4/5] w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center">
+                <div className="aspect-[4/5] w-full bg-white/5 backdrop-blur rounded-2xl overflow-hidden flex items-center justify-center">
                   <img
                     src={img.src}
                     alt={img.alt}
@@ -491,14 +497,14 @@ const Index = () => {
         <div className="absolute inset-0 grid-bg opacity-15" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-80 bg-primary/6 blur-3xl rounded-full" />
         <div className="container relative max-w-2xl px-4">
-          <Card className="p-6 sm:p-8 md:p-10 bg-white border-primary/15 shadow-card text-center">
+          <Card className="p-6 sm:p-8 md:p-10 bg-white border border-primary/15 text-center" style={{ borderRadius: 20, boxShadow: "0 20px 50px rgba(0,0,0,0.35)" }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-primary text-white font-bold text-sm mb-5 sm:mb-6 shadow-blue">
               <Sparkles className="w-4 h-4" /> عرض خاص
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl mb-4 font-black text-foreground">احصل عليه الآن</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl mb-4 font-black" style={{ color: "#1e293b" }}>احصل عليه الآن</h2>
             <div className="flex items-baseline justify-center gap-2 mb-6 sm:mb-8">
               <span className="text-5xl sm:text-6xl md:text-6xl font-black text-gradient">9800</span>
-              <span className="text-xl sm:text-2xl font-bold text-foreground">دج</span>
+              <span className="text-xl sm:text-2xl font-bold" style={{ color: "#1e293b" }}>دج</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 sm:mb-8">
@@ -512,7 +518,7 @@ const Index = () => {
                   className="flex items-center justify-center gap-2 p-3 rounded-lg bg-primary/5 border border-primary/15 hover:bg-primary/10 transition-all"
                 >
                   <Icon className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-semibold text-foreground">{t}</span>
+                  <span className="text-sm font-semibold" style={{ color: "#475569" }}>{t}</span>
                 </div>
               ))}
             </div>
@@ -561,7 +567,7 @@ const Index = () => {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="الاسم الكامل"
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white text-card-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
                 />
                 <input
                   required
@@ -569,7 +575,7 @@ const Index = () => {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="رقم الهاتف"
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white text-card-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
                 />
               </div>
 
@@ -582,7 +588,7 @@ const Index = () => {
                   }}
                   required
                 >
-                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border-primary/20 bg-white text-card-foreground text-right font-medium">
+                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] text-right font-medium">
                     <SelectValue placeholder="اختر الولاية" />
                   </SelectTrigger>
                   <SelectContent className="max-h-72">
@@ -600,7 +606,7 @@ const Index = () => {
                   disabled={!wilayaCode}
                   required
                 >
-                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border-primary/20 bg-white text-card-foreground text-right font-medium disabled:opacity-50">
+                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] text-right font-medium disabled:opacity-50">
                     <SelectValue placeholder={wilayaCode ? "اختر البلدية" : "اختر الولاية أولاً"} />
                   </SelectTrigger>
                   <SelectContent className="max-h-72">
@@ -617,16 +623,16 @@ const Index = () => {
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder="العنوان بالتفصيل (اختياري)"
-                className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border border-primary/20 bg-white text-card-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
               />
 
               {/* Color selector */}
               <div className="space-y-2 pt-1">
-                <label className="block text-sm font-bold text-foreground">اختر اللون</label>
+                <label className="block text-sm font-bold" style={{ color: "#1e293b" }}>اختر اللون</label>
                 <div className="grid grid-cols-2 gap-3">
                   {([
-                    { value: "أبيض", swatch: "bg-white border-primary/30", text: "text-foreground" },
-                    { value: "أسود", swatch: "bg-gray-900 border-primary/30", text: "text-white" },
+                    { value: "أبيض", swatch: "bg-white border-slate-300" },
+                    { value: "أسود", swatch: "bg-gray-900 border-slate-300" },
                   ] as const).map((opt) => {
                     const active = color === opt.value;
                     return (
@@ -634,10 +640,10 @@ const Index = () => {
                         key={opt.value}
                         type="button"
                         onClick={() => setColor(opt.value)}
-                        className={`flex items-center justify-center gap-3 px-4 py-3 rounded-lg border-2 transition-all font-semibold text-card-foreground ${
+                        className={`flex items-center justify-center gap-3 px-4 py-3 rounded-lg border-2 transition-all font-semibold ${
                           active
-                            ? "border-primary bg-primary/5 shadow-blue"
-                            : "border-primary/20 hover:border-primary/50 bg-white"
+                            ? "border-primary bg-primary/5 shadow-blue text-[#1e293b]"
+                            : "border-slate-200 hover:border-primary/50 bg-[#f8fafc] text-[#1e293b]"
                         }`}
                       >
                         <span className={`w-6 h-6 rounded-full border-2 ${opt.swatch}`} />
