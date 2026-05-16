@@ -436,14 +436,14 @@ const Index = () => {
               ].map(({ icon: Icon, title, desc }) => (
                 <Card
                   key={title}
-                  className="p-4 sm:p-5 bg-white border border-primary/10 shadow-card flex items-start gap-4 hover:shadow-glow hover:border-primary/20 transition-all duration-500"
+                  className="p-4 sm:p-5 bg-white/5 backdrop-blur border border-white/10 shadow-card flex items-start gap-4 hover:shadow-glow hover:border-primary/40 transition-all duration-500"
                 >
                   <span className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center shrink-0 shadow-blue">
                     <Icon className="w-6 h-6 text-white" />
                   </span>
                   <div>
                     <h3 className="text-lg sm:text-xl font-bold text-foreground mb-1">{title}</h3>
-                    <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">{desc}</p>
+                    <p className="text-foreground/70 text-sm sm:text-base leading-relaxed">{desc}</p>
                   </div>
                 </Card>
               ))}
