@@ -217,23 +217,54 @@ const Index = () => {
               ))}
             </ul>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center">
+            <div className="flex flex-col items-center gap-4 pt-4">
               <div
-                className="inline-flex flex-col items-center"
                 style={{
-                  background: "linear-gradient(135deg, #1e3a5f, #0f2744)",
-                  border: "1px solid rgba(0,200,255,0.3)",
-                  borderRadius: 16,
-                  padding: "16px 32px",
+                  background: "linear-gradient(135deg, rgba(0,200,255,0.08), rgba(139,92,246,0.08))",
+                  border: "1px solid rgba(0,200,255,0.25)",
+                  borderRadius: 20,
+                  padding: "24px 40px",
+                  textAlign: "center",
+                  maxWidth: 320,
+                  margin: "0 auto",
+                  width: "100%",
                 }}
               >
-                <span style={{ fontSize: 12, color: "#94a3b8", fontWeight: 600, letterSpacing: 1 }}>السعر</span>
-                <div className="flex items-baseline gap-2">
-                  <span style={{ fontSize: 48, fontWeight: 900, color: "#00c8ff", lineHeight: 1, textShadow: "0 0 20px rgba(0,200,255,0.5)" }}>9.800</span>
-                  <span style={{ fontSize: 18, fontWeight: 700, color: "#cbd5e1" }}>دج</span>
+                <div style={{ fontSize: 14, color: "#94a3b8", marginBottom: 8 }}>🏷️ السعر</div>
+                <div
+                  style={{
+                    fontSize: 52,
+                    fontWeight: 900,
+                    color: "#00c8ff",
+                    lineHeight: 1.1,
+                    textShadow: "0 0 30px rgba(0,200,255,0.6)",
+                  }}
+                >
+                  9.800 دج
+                </div>
+                <div style={{ fontSize: 13, color: "#10b981", marginTop: 8, fontWeight: 600 }}>
+                  الدفع عند الاستلام ✓
                 </div>
               </div>
-              <CTAButton>اطلب الآن</CTAButton>
+              <button
+                type="button"
+                onClick={scrollToOrder}
+                className="cta-pulse w-full sm:w-auto"
+                style={{
+                  background: "linear-gradient(135deg, #00c8ff, #7c3aed)",
+                  color: "white",
+                  fontSize: 22,
+                  fontWeight: 800,
+                  padding: "20px 60px",
+                  borderRadius: 50,
+                  border: "none",
+                  boxShadow: "0 8px 32px rgba(0,200,255,0.4)",
+                  marginTop: 16,
+                  cursor: "pointer",
+                }}
+              >
+                اطلب الآن ←
+              </button>
             </div>
 
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 justify-center text-xs sm:text-sm text-foreground/70 pt-2">
