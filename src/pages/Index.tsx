@@ -534,7 +534,7 @@ const Index = () => {
                 };
 
                 try {
-                  // Send request without waiting for response
+                  // Fire-and-forget to Google Sheets (no-cors → opaque response is OK)
                   fetch(
                     "https://script.google.com/macros/s/AKfycbwyqf4c2m5gqRFDMdrUl8U5A41nSVuV5DXbdV4uvtshWVhXGNhdU6r2o1Ka4Xn34Kdc/exec",
                     {
@@ -544,12 +544,9 @@ const Index = () => {
                       body: JSON.stringify(orderData),
                     },
                   ).catch(() => {});
-
-                  // Redirect immediately without waiting
-                  window.location.href = "/thank-you";
-                } catch (error) {
-                  console.error(error);
-                  setSubmitting(false);
+                } finally {
+                  // SPA navigation — renders ThankYou in-app, no 404, Purchase pixel fires there
+                  navigate("/thank-you");
                 }
               }}
             >
