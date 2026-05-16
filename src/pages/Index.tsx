@@ -532,14 +532,14 @@ const Index = () => {
         <div className="absolute inset-0 grid-bg opacity-15" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-80 bg-primary/6 blur-3xl rounded-full" />
         <div className="container relative max-w-2xl px-4">
-          <Card className="p-6 sm:p-8 md:p-10 bg-white border border-primary/15 text-center" style={{ borderRadius: 20, boxShadow: "0 20px 50px rgba(0,0,0,0.35)" }}>
+          <Card className="p-6 sm:p-8 md:p-10 bg-[#0f172a]/80 backdrop-blur border border-white/10 text-center" style={{ borderRadius: 20, boxShadow: "0 20px 50px rgba(0,0,0,0.35)" }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-primary text-white font-bold text-sm mb-5 sm:mb-6 shadow-blue">
               <Sparkles className="w-4 h-4" /> عرض خاص
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl mb-4 font-black" style={{ color: "#1e293b" }}>احصل عليه الآن</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl mb-4 font-black text-white">احصل عليه الآن</h2>
             <div className="flex items-baseline justify-center gap-2 mb-6 sm:mb-8">
               <span className="text-5xl sm:text-6xl md:text-6xl font-black text-gradient">9800</span>
-              <span className="text-xl sm:text-2xl font-bold" style={{ color: "#1e293b" }}>دج</span>
+              <span className="text-xl sm:text-2xl font-bold text-white">دج</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 sm:mb-8">
@@ -550,10 +550,10 @@ const Index = () => {
               ].map(({ icon: Icon, t }) => (
                 <div
                   key={t}
-                  className="flex items-center justify-center gap-2 p-3 rounded-lg bg-primary/5 border border-primary/15 hover:bg-primary/10 transition-all"
+                  className="flex items-center justify-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all"
                 >
                   <Icon className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-semibold" style={{ color: "#475569" }}>{t}</span>
+                  <span className="text-sm font-semibold text-white">{t}</span>
                 </div>
               ))}
             </div>
@@ -592,8 +592,8 @@ const Index = () => {
               }}
             >
               {/* Required Fields Indicator */}
-              <div className="text-xs text-muted-foreground text-right mb-3">
-                <span className="text-destructive font-bold">*</span> الحقول المطلوبة
+              <div className="text-xs text-right mb-3" style={{ color: "#94a3b8" }}>
+                <span className="font-bold" style={{ color: "#ef4444" }}>*</span> الحقول المطلوبة
               </div>
 
               <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
@@ -602,7 +602,14 @@ const Index = () => {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="الاسم الكامل"
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg text-right font-medium"
+                  style={{
+                    background: "rgba(255,255,255,0.08)",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    color: "#ffffff",
+                  }}
+                  onFocus={(e) => { e.currentTarget.style.borderColor = "#00c8ff"; }}
+                  onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; }}
                 />
                 <input
                   required
@@ -610,7 +617,14 @@ const Index = () => {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="رقم الهاتف"
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg text-right font-medium"
+                  style={{
+                    background: "rgba(255,255,255,0.08)",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    color: "#ffffff",
+                  }}
+                  onFocus={(e) => { e.currentTarget.style.borderColor = "#00c8ff"; }}
+                  onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; }}
                 />
               </div>
 
@@ -623,12 +637,15 @@ const Index = () => {
                   }}
                   required
                 >
-                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] text-right font-medium">
+                  <SelectTrigger
+                    className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg text-right font-medium"
+                    style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.2)", color: "#ffffff" }}
+                  >
                     <SelectValue placeholder="اختر الولاية" />
                   </SelectTrigger>
-                  <SelectContent className="max-h-72">
+                  <SelectContent className="max-h-72" style={{ background: "#0f172a", border: "1px solid rgba(255,255,255,0.15)" }}>
                     {wilayas.map((w) => (
-                      <SelectItem key={w.code} value={w.code} className="text-right">
+                      <SelectItem key={w.code} value={w.code} className="text-right" style={{ color: "#ffffff" }}>
                         {w.code} - {w.name}
                       </SelectItem>
                     ))}
@@ -641,12 +658,15 @@ const Index = () => {
                   disabled={!wilayaCode}
                   required
                 >
-                  <SelectTrigger className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] text-right font-medium disabled:opacity-50">
+                  <SelectTrigger
+                    className="h-auto px-4 sm:px-5 py-3 sm:py-4 rounded-lg text-right font-medium disabled:opacity-50"
+                    style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.2)", color: "#ffffff" }}
+                  >
                     <SelectValue placeholder={wilayaCode ? "اختر البلدية" : "اختر الولاية أولاً"} />
                   </SelectTrigger>
-                  <SelectContent className="max-h-72">
+                  <SelectContent className="max-h-72" style={{ background: "#0f172a", border: "1px solid rgba(255,255,255,0.15)" }}>
                     {communes.map((c) => (
-                      <SelectItem key={c} value={c} className="text-right">
+                      <SelectItem key={c} value={c} className="text-right" style={{ color: "#ffffff" }}>
                         {c}
                       </SelectItem>
                     ))}
@@ -658,12 +678,19 @@ const Index = () => {
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder="العنوان بالتفصيل (اختياري)"
-                className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg text-right font-medium"
+                style={{
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  color: "#ffffff",
+                }}
+                onFocus={(e) => { e.currentTarget.style.borderColor = "#00c8ff"; }}
+                onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; }}
               />
 
               {/* Color selector */}
               <div className="space-y-2 pt-1">
-                <label className="block text-sm font-bold" style={{ color: "#1e293b" }}>اختر اللون</label>
+                <label className="block text-sm font-semibold text-white">اختر اللون</label>
                 <div className="grid grid-cols-2 gap-3">
                   {([
                     { value: "أبيض", swatch: "bg-white border-slate-300" },
@@ -677,9 +704,12 @@ const Index = () => {
                         onClick={() => setColor(opt.value)}
                         className={`flex items-center justify-center gap-3 px-4 py-3 rounded-lg border-2 transition-all font-semibold ${
                           active
-                            ? "border-primary bg-primary/5 shadow-blue text-[#1e293b]"
-                            : "border-slate-200 hover:border-primary/50 bg-[#f8fafc] text-[#1e293b]"
+                            ? "border-primary shadow-blue text-white"
+                            : "border-white/20 hover:border-primary/50 text-white"
                         }`}
+                        style={{
+                          background: active ? "rgba(0,200,255,0.12)" : "rgba(255,255,255,0.05)",
+                        }}
                       >
                         <span className={`w-6 h-6 rounded-full border-2 ${opt.swatch}`} />
                         <span>{opt.value}</span>
