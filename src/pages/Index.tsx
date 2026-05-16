@@ -602,7 +602,14 @@ const Index = () => {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="الاسم الكامل"
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg text-right font-medium"
+                  style={{
+                    background: "rgba(255,255,255,0.08)",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    color: "#ffffff",
+                  }}
+                  onFocus={(e) => { e.currentTarget.style.borderColor = "#00c8ff"; }}
+                  onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; }}
                 />
                 <input
                   required
@@ -610,7 +617,14 @@ const Index = () => {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="رقم الهاتف"
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg border bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary/30 text-right font-medium"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg text-right font-medium"
+                  style={{
+                    background: "rgba(255,255,255,0.08)",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    color: "#ffffff",
+                  }}
+                  onFocus={(e) => { e.currentTarget.style.borderColor = "#00c8ff"; }}
+                  onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; }}
                 />
               </div>
 
