@@ -402,7 +402,7 @@ const Index = () => {
             ].map((img) => (
               <div key={img.src} className="group overflow-hidden shadow-card border border-primary/10 hover:shadow-glow transition-all duration-500" style={{ borderRadius: 16 }}>
                 <div
-                  className="w-full overflow-hidden min-h-[280px] md:min-h-[350px] lg:min-h-[400px]"
+                  className="w-full overflow-hidden aspect-[3/4]"
                   style={{ background: "linear-gradient(135deg, #1a1f3a, #0d1528)", borderRadius: 16 }}
                 >
                   <img
@@ -411,7 +411,7 @@ const Index = () => {
                     loading="lazy"
                     decoding="async"
                     onError={(e) => { (e.currentTarget as HTMLImageElement).style.visibility = "hidden"; }}
-                    style={{ width: "100%", height: "100%", minHeight: "inherit", objectFit: "cover", display: "block", borderRadius: 16 }}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block", borderRadius: 16 }}
                     className="transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
