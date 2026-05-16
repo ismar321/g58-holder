@@ -280,34 +280,7 @@ const Index = () => {
         <div className="absolute inset-0 grid-bg opacity-15" />
         <div className="container relative max-w-7xl px-4">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 items-start mb-10 sm:mb-12">
-            {/* Solution column */}
-            <div className="space-y-5">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/8 text-primary font-bold text-sm border border-primary/20">
-                <Sparkles className="w-4 h-4" /> الحل
-              </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl leading-tight font-black">
-                <span className="text-gradient">Upgrade كامل</span> للـ Setup
-              </h2>
-              <div className="space-y-3">
-                {[
-                  "يحمي كرت الشاشة من الانحناء والكسر",
-                  "شاشة IPS بمعدل تحديث عالي تعرض كل معطيات جهازك: CPU، GPU، FPS، درجة الحرارة وحتى أحوال الطقس",
-                  "راقب أداء جهازك مباشرة داخل الكيس — كل المعلومات في متناول نظرك بشكل أنيق واحترافي",
-                ].map((t) => (
-                  <Card
-                    key={t}
-                    className="p-4 sm:p-5 bg-white/5 backdrop-blur border border-white/10 shadow-card flex items-center gap-3 hover:shadow-glow hover:border-primary/40 transition-all duration-500"
-                  >
-                    <span className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shrink-0 shadow-blue">
-                      <Check className="w-5 h-5 text-white" />
-                    </span>
-                    <p className="text-sm sm:text-base font-semibold leading-relaxed text-foreground">{t}</p>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* Problem column */}
+            {/* Problem column (now first) */}
             <div className="space-y-5">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-destructive/8 text-destructive font-bold text-sm border border-destructive/20">
                 <AlertTriangle className="w-4 h-4" /> المشكلة
@@ -327,6 +300,33 @@ const Index = () => {
                   >
                     <span className="w-10 h-10 rounded-lg bg-destructive/20 flex items-center justify-center shrink-0">
                       <AlertTriangle className="w-5 h-5 text-destructive" />
+                    </span>
+                    <p className="text-sm sm:text-base font-semibold leading-relaxed text-foreground">{t}</p>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Solution column (now second) */}
+            <div className="space-y-5">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/8 text-primary font-bold text-sm border border-primary/20">
+                <Sparkles className="w-4 h-4" /> الحل
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl leading-tight font-black">
+                <span className="text-gradient">Upgrade كامل</span> للـ Setup
+              </h2>
+              <div className="space-y-3">
+                {[
+                  "يحمي كرت الشاشة من الانحناء والكسر",
+                  "شاشة IPS بمعدل تحديث عالي تعرض كل معطيات جهازك: CPU، GPU، FPS، درجة الحرارة وحتى أحوال الطقس",
+                  "راقب أداء جهازك مباشرة داخل الكيس — كل المعلومات في متناول نظرك بشكل أنيق واحترافي",
+                ].map((t) => (
+                  <Card
+                    key={t}
+                    className="p-4 sm:p-5 bg-white/5 backdrop-blur border border-white/10 shadow-card flex items-center gap-3 hover:shadow-glow hover:border-primary/40 transition-all duration-500"
+                  >
+                    <span className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shrink-0 shadow-blue">
+                      <Check className="w-5 h-5 text-white" />
                     </span>
                     <p className="text-sm sm:text-base font-semibold leading-relaxed text-foreground">{t}</p>
                   </Card>
