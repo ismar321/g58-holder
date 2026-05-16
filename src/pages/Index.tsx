@@ -116,11 +116,30 @@ const Index = () => {
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-hero py-8 sm:py-12 md:py-16">
         <div className="absolute inset-0 grid-bg opacity-30" />
-        <div className="absolute top-0 -left-32 w-80 h-80 rounded-full bg-primary/6 blur-3xl" />
-        <div className="absolute bottom-0 -right-32 w-72 h-72 rounded-full bg-accent/4 blur-3xl" />
+        <div className="absolute top-0 -left-32 w-80 h-80 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute bottom-0 -right-32 w-72 h-72 rounded-full bg-accent/10 blur-3xl" />
 
         <div className="container relative px-4">
-          {/* Gallery Images First */}
+          {/* Headline ABOVE images */}
+          <div className="max-w-3xl mx-auto space-y-6 text-center fade-in mb-10 sm:mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/10 backdrop-blur border border-primary/30 shadow-card mx-auto">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-sm font-bold text-foreground">جديد · إصدار محدود</span>
+            </div>
+
+            <h1
+              className="leading-tight font-black text-foreground text-glow"
+              style={{ fontSize: "clamp(28px, 6vw, 56px)" }}
+            >
+              خلي Setup تاعك <span className="text-gradient">Level آخر</span> 🔥
+            </h1>
+
+            <p className="text-lg sm:text-xl md:text-2xl text-foreground/90 font-semibold leading-relaxed">
+              حامل GPU ذكي مع شاشة <span className="text-gradient font-bold">IPS 4.58"</span> تعرض معلومات جهازك مباشرة داخل الكيس
+            </p>
+          </div>
+
+          {/* Gallery Images Below */}
           <div className="mb-12 sm:mb-16">
             <div className="relative mx-auto max-w-3xl">
               <Carousel
@@ -148,7 +167,7 @@ const Index = () => {
                           sizes="(max-width: 640px) 95vw, (max-width: 1024px) 85vw, 50vw"
                           className="rounded-2xl w-full aspect-[4/3] object-cover transition-transform duration-700 ease-out group-hover:scale-105 bg-muted shadow-card"
                         />
-                        <span className="absolute bottom-3 right-3 flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm border border-primary/20 text-xs font-bold text-foreground">
+                        <span className="absolute bottom-3 right-3 flex items-center gap-1 px-3 py-1.5 rounded-full bg-card/90 backdrop-blur-sm border border-primary/20 text-xs font-bold text-card-foreground">
                           <ZoomIn className="w-3.5 h-3.5 text-primary" /> تكبير
                         </span>
                         <span dir="ltr" className="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-primary/80 text-white text-xs font-black tabular-nums">
@@ -162,7 +181,6 @@ const Index = () => {
                 <CarouselNext className="hidden sm:flex -left-4 right-auto border-primary/30 hover:bg-primary/10" />
               </Carousel>
 
-              {/* Slide indicator dots */}
               <div className="flex items-center justify-center gap-2 mt-6">
                 {galleryImages.map((_, i) => (
                   <button
@@ -173,7 +191,7 @@ const Index = () => {
                     className={`h-2 rounded-full transition-all duration-300 ${
                       currentSlide === i
                         ? "w-8 bg-gradient-primary shadow-blue"
-                        : "w-2 bg-border hover:bg-primary/50"
+                        : "w-2 bg-border/40 hover:bg-primary/50"
                     }`}
                   />
                 ))}
@@ -181,21 +199,8 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Text Content Below Images */}
-          <div className="max-w-3xl mx-auto space-y-6 text-center fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/20 shadow-card mx-auto">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-bold text-foreground">جديد · إصدار محدود</span>
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-black">
-              خلي Setup تاعك <span className="text-gradient">Level آخر</span> 🔥
-            </h1>
-
-            <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 font-semibold leading-relaxed">
-              حامل GPU ذكي مع شاشة <span className="text-gradient font-bold">IPS 4.58"</span> تعرض معلومات جهازك مباشرة داخل الكيس
-            </p>
-
+          {/* Features + Price + CTA */}
+          <div className="max-w-3xl mx-auto space-y-6 text-center">
             <ul className="space-y-2.5 max-w-2xl mx-auto">
               {[
                 "يحمي كرت الشاشة من الانحناء وكسر اللوحة الأم",
@@ -207,21 +212,25 @@ const Index = () => {
                   <span className="w-6 h-6 rounded-full bg-gradient-primary flex items-center justify-center shrink-0 shadow-blue">
                     <Check className="w-3.5 h-3.5 text-white" />
                   </span>
-                  <span className="text-base md:text-lg font-medium">{t}</span>
+                  <span className="text-base md:text-lg font-semibold text-foreground/95">{t}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-4 justify-center">
-              <div className="flex items-baseline gap-2 px-5 sm:px-6 py-3 sm:py-4 rounded-lg bg-white border border-primary/15 shadow-card">
-                <span className="text-sm text-muted-foreground">السعر:</span>
-                <span className="text-3xl sm:text-4xl font-black text-gradient">9800</span>
-                <span className="font-bold text-foreground">دج</span>
+            <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center">
+              <div className="relative inline-flex items-baseline gap-2 px-7 py-4 rounded-2xl bg-card/10 backdrop-blur border-2 border-primary/40 shadow-glow">
+                <span className="absolute -top-3 right-4 px-3 py-0.5 rounded-full bg-gradient-primary text-white text-xs font-black shadow-blue">
+                  السعر
+                </span>
+                <span className="font-black text-gradient price-glow" style={{ fontSize: "clamp(36px, 7vw, 56px)" }}>
+                  9800
+                </span>
+                <span className="text-xl font-black text-foreground">دج</span>
               </div>
               <CTAButton>اطلب الآن</CTAButton>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 justify-center text-xs sm:text-sm text-muted-foreground pt-2">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 justify-center text-xs sm:text-sm text-foreground/70 pt-2">
               <span className="flex items-center gap-1"><Truck className="w-4 h-4 text-primary" /> توصيل لكامل الولايات</span>
               <span className="flex items-center gap-1"><Shield className="w-4 h-4 text-primary" /> دفع عند الاستلام</span>
             </div>
