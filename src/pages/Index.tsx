@@ -401,13 +401,17 @@ const Index = () => {
               { src: themesEye, alt: "ثيم عين أنمي حمراء" },
             ].map((img) => (
               <div key={img.src} className="group overflow-hidden rounded-2xl shadow-card border border-primary/10 hover:shadow-glow transition-all duration-500">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-110 bg-muted"
-                />
+                <div className="aspect-[3/4] w-full overflow-hidden" style={{ background: "linear-gradient(135deg, #1a1f3a, #0d1528)" }}>
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    decoding="async"
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.visibility = "hidden"; }}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                    className="transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
               </div>
             ))}
           </div>
