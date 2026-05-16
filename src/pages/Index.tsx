@@ -306,7 +306,7 @@ const Index = () => {
 
           {/* Video */}
           <div className="mx-auto w-full max-w-4xl">
-            <div className="rounded-2xl overflow-hidden video-glow bg-white border border-primary/10 shadow-card">
+            <div className="rounded-2xl overflow-hidden video-glow bg-black/40 border border-white/10 shadow-card">
               <video
                 src="https://res.cloudinary.com/dtnljybtv/video/upload/v1778748551/LSA_hpktlj.mp4"
                 autoPlay
