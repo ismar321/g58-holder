@@ -458,7 +458,7 @@ const Index = () => {
               { src: dimAccessories, alt: "محتويات العلبة والإكسسوارات" },
             ].map((img) => (
               <div key={img.src} className="group overflow-hidden rounded-2xl shadow-card border border-primary/10 hover:shadow-glow transition-all duration-500">
-                <div className="aspect-[4/5] w-full bg-white rounded-2xl overflow-hidden flex items-center justify-center">
+                <div className="aspect-[4/5] w-full bg-white/5 backdrop-blur rounded-2xl overflow-hidden flex items-center justify-center">
                   <img
                     src={img.src}
                     alt={img.alt}
