@@ -218,14 +218,20 @@ const Index = () => {
             </ul>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center">
-              <div className="relative inline-flex items-baseline gap-2 px-7 py-4 rounded-2xl bg-card/10 backdrop-blur border-2 border-primary/40 shadow-glow">
-                <span className="absolute -top-3 right-4 px-3 py-0.5 rounded-full bg-gradient-primary text-white text-xs font-black shadow-blue">
-                  السعر
-                </span>
-                <span className="font-black text-gradient price-glow" style={{ fontSize: "clamp(36px, 7vw, 56px)" }}>
-                  9800
-                </span>
-                <span className="text-xl font-black text-foreground">دج</span>
+              <div
+                className="inline-flex flex-col items-center"
+                style={{
+                  background: "linear-gradient(135deg, #1e3a5f, #0f2744)",
+                  border: "1px solid rgba(0,200,255,0.3)",
+                  borderRadius: 16,
+                  padding: "16px 32px",
+                }}
+              >
+                <span style={{ fontSize: 12, color: "#94a3b8", fontWeight: 600, letterSpacing: 1 }}>السعر</span>
+                <div className="flex items-baseline gap-2">
+                  <span style={{ fontSize: 36, fontWeight: 800, color: "#00c8ff", lineHeight: 1 }}>9800</span>
+                  <span style={{ fontSize: 16, fontWeight: 700, color: "#cbd5e1" }}>دج</span>
+                </div>
               </div>
               <CTAButton>اطلب الآن</CTAButton>
             </div>
