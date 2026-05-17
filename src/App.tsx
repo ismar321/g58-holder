@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ThankYou from "./pages/ThankYou.tsx";
 import WhatsAppButton from "./components/WhatsAppButton.tsx";
+import ImageLightbox from "./components/ImageLightbox.tsx";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
         </Routes>
       </BrowserRouter>
       <WhatsAppButton />
+      <ImageLightbox />
     </TooltipProvider>
   </QueryClientProvider>
 );

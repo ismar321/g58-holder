@@ -131,6 +131,11 @@
   .cta-pulse { animation: cta-pulse 2.4s ease-in-out infinite; }
 
   input::placeholder, textarea::placeholder { color: #94a3b8 !important; }
+
+  .feature-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--hover-border) !important;
+  }
 }
 
 @keyframes rgb-flow {
