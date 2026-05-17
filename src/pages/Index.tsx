@@ -469,7 +469,7 @@ const Index = () => {
             ].map((img) => (
               <div key={img.src} className="group overflow-hidden shadow-card border border-primary/10 hover:shadow-glow transition-all duration-500" style={{ borderRadius: 16 }}>
                 <div
-                  className="w-full overflow-hidden aspect-[3/4]"
+                  className="w-full overflow-hidden h-[260px] md:h-[300px] lg:h-[380px]"
                   style={{ background: "linear-gradient(135deg, #1a1f3a, #0d1528)", borderRadius: 16 }}
                 >
                   <img
