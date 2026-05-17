@@ -218,9 +218,9 @@ const Index = () => {
                   borderHover: "rgba(139,92,246,0.6)",
                 },
                 {
-                  icon: "🎮",
-                  title: "تصميم Gaming",
-                  text: "إضاءة RGB احترافية تزيد جمالية Setup بشكل مميز",
+                  icon: "🔩",
+                  title: "وخامات معدنية بجودة تصنيع ممتازة",
+                  text: "خامات معدنية ممتازة وعمر افتراضي طويل يضمن لك الأداء والحماية على المدى البعيد",
                   border: "rgba(0,200,255,0.3)",
                   borderHover: "rgba(0,200,255,0.6)",
                 },
@@ -239,34 +239,35 @@ const Index = () => {
                   style={{
                     background: "rgba(255,255,255,0.04)",
                     border: `1px solid ${c.border}`,
-                    borderRadius: 16,
-                    padding: 20,
+                    borderRadius: 20,
+                    padding: "28px 24px",
                     display: "flex",
                     alignItems: "flex-start",
                     gap: 14,
                     backdropFilter: "blur(10px)",
                     transition: "all 0.3s ease",
+                    minHeight: 160,
                     ["--hover-border" as any]: c.borderHover,
                   }}
                 >
                   <div
                     style={{
-                      width: 48,
-                      height: 48,
-                      borderRadius: 12,
+                      width: 56,
+                      height: 56,
+                      borderRadius: 14,
                       background: "rgba(0,200,255,0.1)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      fontSize: 24,
+                      fontSize: 28,
                       flexShrink: 0,
                     }}
                   >
                     {c.icon}
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <h3 style={{ fontSize: 16, fontWeight: 700, color: "#ffffff", marginBottom: 4 }}>{c.title}</h3>
-                    <p style={{ fontSize: 14, color: "#94a3b8", lineHeight: 1.6, margin: 0 }}>{c.text}</p>
+                    <h3 style={{ fontSize: 18, fontWeight: 800, color: "#ffffff", marginBottom: 8 }}>{c.title}</h3>
+                    <p style={{ fontSize: 15, color: "#cbd5e1", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>{c.text}</p>
                     {c.swatches && (
                       <div style={{ display: "flex", gap: 12, marginTop: 10, alignItems: "center" }}>
                         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
