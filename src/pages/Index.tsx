@@ -105,7 +105,7 @@ const Index = () => {
             <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-primary flex items-center justify-center shadow-blue">
               <Cpu className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground" />
             </div>
-            <span className="font-black text-base sm:text-lg text-foreground">GPU Stand Pro</span>
+            <span className="font-black text-base sm:text-lg text-foreground">GPU Stand with IPS 60Hz Screen</span>
           </div>
           <Button onClick={scrollToOrder} size="sm" className="bg-gradient-primary text-primary-foreground rounded-lg font-bold text-xs sm:text-sm hover:opacity-90 transition-all">
             اطلب الآن
