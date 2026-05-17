@@ -201,21 +201,88 @@ const Index = () => {
 
           {/* Features + Price + CTA */}
           <div className="max-w-3xl mx-auto space-y-6 text-center">
-            <ul className="space-y-2.5 max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-2xl mx-auto text-right">
               {[
-                "يحمي كرت الشاشة من الانحناء وكسر اللوحة الأم",
-                'شاشة 4.58" للحرارة، الأداء، ثيمات، GIF، فيديوهات',
-                "تصميم Gaming احترافي يزيد جمالية Setup",
-                "متوفر بلونين: أبيض و أسود",
-              ].map((t) => (
-                <li key={t} className="flex items-center gap-3 justify-center">
-                  <span className="w-6 h-6 rounded-full bg-gradient-primary flex items-center justify-center shrink-0 shadow-blue">
-                    <Check className="w-3.5 h-3.5 text-white" />
-                  </span>
-                  <span className="text-base md:text-lg font-semibold text-foreground/95">{t}</span>
-                </li>
+                {
+                  icon: "🛡️",
+                  title: "حماية كاملة",
+                  text: "يحمي كرت الشاشة من الانحناء وكسر اللوحة الأم",
+                  border: "rgba(0,200,255,0.3)",
+                  borderHover: "rgba(0,200,255,0.6)",
+                },
+                {
+                  icon: "📱",
+                  title: "شاشة IPS ذكية",
+                  text: 'تعرض الحرارة، الأداء، ثيمات، GIF وفيديوهات — 4.58" | 60Hz',
+                  border: "rgba(139,92,246,0.3)",
+                  borderHover: "rgba(139,92,246,0.6)",
+                },
+                {
+                  icon: "🎮",
+                  title: "تصميم Gaming",
+                  text: "إضاءة RGB احترافية تزيد جمالية Setup بشكل مميز",
+                  border: "rgba(0,200,255,0.3)",
+                  borderHover: "rgba(0,200,255,0.6)",
+                },
+                {
+                  icon: "🎨",
+                  title: "متوفر بلونين",
+                  text: "اختر لونك المفضل",
+                  border: "rgba(139,92,246,0.3)",
+                  borderHover: "rgba(139,92,246,0.6)",
+                  swatches: true,
+                },
+              ].map((c) => (
+                <div
+                  key={c.title}
+                  className="feature-card"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: `1px solid ${c.border}`,
+                    borderRadius: 16,
+                    padding: 20,
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: 14,
+                    backdropFilter: "blur(10px)",
+                    transition: "all 0.3s ease",
+                    ["--hover-border" as any]: c.borderHover,
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 48,
+                      height: 48,
+                      borderRadius: 12,
+                      background: "rgba(0,200,255,0.1)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: 24,
+                      flexShrink: 0,
+                    }}
+                  >
+                    {c.icon}
+                  </div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <h3 style={{ fontSize: 16, fontWeight: 700, color: "#ffffff", marginBottom: 4 }}>{c.title}</h3>
+                    <p style={{ fontSize: 14, color: "#94a3b8", lineHeight: 1.6, margin: 0 }}>{c.text}</p>
+                    {c.swatches && (
+                      <div style={{ display: "flex", gap: 12, marginTop: 10, alignItems: "center" }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                          <span style={{ width: 24, height: 24, borderRadius: "50%", background: "#ffffff", border: "2px solid #334155", display: "block" }} />
+                          <span style={{ fontSize: 13, color: "#cbd5e1" }}>أبيض</span>
+                        </div>
+                        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                          <span style={{ width: 24, height: 24, borderRadius: "50%", background: "#0a0a0a", border: "2px solid #475569", boxShadow: "0 0 12px rgba(0,200,255,0.4)", display: "block" }} />
+                          <span style={{ fontSize: 13, color: "#cbd5e1" }}>أسود</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
 
             <div className="flex flex-col items-center gap-4 pt-4">
               <div
